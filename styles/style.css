@@ -1,0 +1,1323 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit
+}
+
+:root {
+    --main-text-color: #fff;
+    --header-color: #404040;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #404040;
+    background: url("../img/bg.png") no-repeat top center;
+}
+
+main {
+    overflow: hidden;
+    padding-top: 40px;
+    margin-top: -40px;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1366px;
+    padding: 0 100px;
+    margin: 0 auto;
+}
+
+
+
+/*--- Разметка Headre ---*/
+
+.main-header {
+    position: relative;
+    z-index: 99;
+    padding-top: 20px;
+}
+
+/*--- Разметка Навигации ---*/
+.main-header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main-header-nav .logo {
+    margin-right: 20px;
+}
+
+.site-navigation {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.site-navigation-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.site-navigation-item a {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    transition: color .2s linear;
+}
+
+.site-navigation-item a:hover {
+    color: #404040;
+}
+
+.main-header-nav .header-phone {
+    margin-left: auto;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.burger-menu-btn {
+    display: none;
+    font-size: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.burger-menu-btn img {
+    width: 23px;
+    height: 16px;
+}
+
+/*--- Разметка Навигации end ---*/
+
+/*--- Main блок start ---*/
+
+.main-block {
+    position: relative;
+    padding-top: 135px;
+    padding-bottom: 285px;
+}
+
+.main-block picture {
+    position: absolute;
+    top: -170px;
+    right: -25px;
+    z-index: -1;
+}
+
+.main-h1 {
+    font-family: "Roboto", serif;
+    font-size: 58px;
+    font-weight: 300;
+    color: var(--main-text-color);
+    text-transform: uppercase;
+    width: 350px;
+    display: block;
+    margin: 0;
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    padding: 20px 45px;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.2s linear;
+
+}
+
+.btn-main {
+    margin-top: 45px;
+}
+
+.btn:hover {
+    color: #404040;
+}
+
+
+.btn::after {
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 12px;
+    background: url("../img/arrow.png") no-repeat center;
+    top: 50%;
+    right: -35px;
+    transform: translateY(-50%);
+}
+
+.main-block p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    color: var(--main-text-color);
+    font-weight: 300;
+}
+
+
+/*--- Main блок end ---*/
+
+
+/*--- About блок start ---*/
+
+.about-pilates {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    min-height: 650px;
+}
+
+.about-pilates::before {
+    content: "";
+    position: absolute;
+    width: 134px;
+    height: 132px;
+    background: url("../img/dots.png") no-repeat center;
+    top: 32%;
+    left: 43%;
+    z-index: -2;
+}
+
+.about-pilates picture {
+    position: absolute;
+    z-index: -1;
+    right: 80px;
+    top: 15px;
+}
+
+
+/*--- Стили заголовков H2 на странице ---*/
+
+.headers-h2 {
+    display: inline-block;
+    position: relative;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.headers-h2::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #404040;
+    left: 0;
+    top: 50%;
+}
+
+/*--- Стили заголовков H2 на странице end ---*/
+
+.about-pilates-h2 {
+    padding-left: 60px;
+    margin-bottom: 50px;
+}
+
+
+.about-pilates p {
+    padding-right: 70%;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.btn-more {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #2a4f37;
+    transition: 0.2s;
+}
+
+.btn-more:hover {
+    opacity: 0.7;
+}
+
+i {
+    border: solid #2a4f37;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 5px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+/*--- About блок end ---*/
+
+/*--- Блок тарифов start ---*/
+
+.tarifs {
+    margin-bottom: 100px;
+}
+
+.tarifs-h2 {
+    padding-left: 60px;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.tarifs-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.tarifs-list-item {
+    position: relative;
+    width: calc(100% / 3);
+    padding: 180px 70px 90px 70px;
+    background-color: #c8d4ac;
+}
+
+.tarifs-list-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.tarifs-list-item:nth-child(2) {
+    background-color: #b2c38a;
+}
+
+.tarifs-list-item:nth-child(3) {
+    background-color: #9cb269;
+}
+
+.tarifs-list-item h3 {
+    font-family: "Roboto", serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tarifs-list-item h3 span {
+    display: block;
+    font-size: 28px;
+}
+
+.tarifs-list-item p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.tarifs-list-item::before {
+    content: "01";
+    position: absolute;
+    font-size: 210px;
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    top: 20px;
+    right: 40px;
+    opacity: .3;
+
+}
+
+.tarifs-list-item:nth-child(2)::before {
+    content: "02";
+}
+
+.tarifs-list-item:nth-child(3)::before {
+    content: "03";
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+    line-height: 40px;
+    margin-bottom: 35px;
+}
+
+th {
+    width: 20%;
+}
+
+.btn-tarifs {
+    padding: 20px 65px;
+}
+
+
+/*--- Блок тарифов end ---*/
+
+
+/*--- Блок практик start ---*/
+.how-practice-h2 {
+    padding-left: 60px;
+    margin: 0;
+
+}
+
+.practice-list {
+    list-style: none;
+    padding: 0 90px;
+    margin-top: 50px;
+}
+
+.practice-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+.practice-item:nth-child(2) {
+    top: -50px;
+}
+
+
+
+.practice-item h3 {
+    font-size: 28px;
+    font-weight: 400;
+
+}
+
+.practice-item p {
+    line-height: 28px;
+}
+
+.practice-text-container {
+    position: relative;
+    z-index: 99;
+
+}
+
+.practice-item:nth-child(even) .practice-text-container {
+    order: 1;
+}
+
+
+.practice-item picture {
+    position: relative;
+
+}
+
+.practice-item:nth-child(even) picture {
+    left: -85px;
+}
+
+
+/*--- Блок практик end ---*/
+
+
+/*--- Блок отзывов start ---*/
+
+.reviews {
+    margin-top: 100px;
+}
+
+.reviews-h2 {
+    padding-left: 60px;
+    margin: 0;
+}
+
+
+.slider {
+    max-width: 80%;
+    margin: 60px auto;
+    overflow: hidden;
+    box-shadow: 9px 29px 32px rgba(0, 0, 0, 0.2);
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: all ease 1s;
+}
+
+
+.slide {
+    position: relative;
+    background-color: #fff;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    width: 115px;
+    height: 132px;
+    background: url("../img/dots-2.png") no-repeat center;
+    top: 40px;
+    right: 25px;
+}
+
+.slide blockquote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(100% - 90%);
+    padding-bottom: calc(100% - 90%);
+    z-index: 99;
+}
+
+blockquote img {
+    margin-right: 50px;
+    border-radius: 50%;
+}
+
+.blockquote-text {
+    width: calc(100% - 40%);
+}
+
+blockquote cite {
+    font-family: "Roboto", serif;
+    font-size: 28px;
+}
+
+.age {
+    font-family: "Roboto", serif;
+    font-size: 18px;
+}
+
+.slider-btn {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: solid #ced9b5;
+    border-width: 0 3px 3px 0;
+    background: none;
+    font-size: 0;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.slider-btn-prev {
+    top: 50%;
+    left: 5%;
+    transform: translate(-50%, -5%);
+    transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+}
+
+.slider-btn-next {
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -5%);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.slider-control-block {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-control-item {
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.slider-control-item label {
+    cursor: pointer;
+}
+
+
+.slider-control-item .radio {
+    display: none;
+}
+
+.text {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0;
+    display: inline-block;
+}
+
+.text::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background: #c8d4ac;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+
+.text::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    border: 10px solid #91aa59;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+}
+
+.slide--active+.text::after {
+    opacity: 1;
+
+}
+
+/*--- Блок отзывов end ---*/
+
+/*--- Блок контактов start ---*/
+
+.contacts {
+    margin-top: 100px;
+}
+
+.contacts-h2 {
+    padding-left: 60px;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.contact-list {
+    position: absolute;
+    top: 75px;
+    left: 100px;
+    background-color: #91aa59;
+    padding: 65px;
+    color: var(--main-text-color);
+    z-index: 99;
+
+}
+
+dt {
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+}
+
+.contact-list dd {
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+    margin-bottom: 25px;
+
+}
+
+.contact-list dd a {
+    color: var(--main-text-color);
+    outline: none;
+}
+
+.map-wrapper {
+    max-width: 1366px;
+    width: 100%;
+    margin: 0 auto;
+    height: 513px;
+    background: url("../img/map.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-wrapper iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+
+/*--- Блок контактов end ---*/
+
+
+/*--- Блок footer start ---*/
+
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+footer .wrapper {
+    background: #91aa59;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.footer-nav .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-text-color);
+}
+
+.footer-social-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-list li {
+    position: relative;
+    color: var(--main-text-color);
+    margin-right: 18px;
+    padding-left: 30px;
+    line-height: 30px;
+    font-size: 0;
+
+}
+
+.footer-social-list a::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+
+}
+
+.vk a::before {
+    background: url("../img/vk.svg") no-repeat center;
+}
+
+.fb a::before {
+    background: url("../img/facebook.svg") no-repeat center;
+}
+
+.instagram a::before {
+    background: url("../img/instagram.svg") no-repeat center;
+}
+
+
+/*--- Блок footer end ---*/
+
+
+/*--- Форма записи start ---*/
+
+.write-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    z-index: 99;
+    background-color: #fff;
+}
+
+
+.form-wrapper {
+    display: none;
+    box-shadow: 9px 29px 32px rgba(0, 0, 0, 0.2);
+}
+
+.form-show {
+    display: block;
+    width: 1165px;
+}
+
+
+.form-container {
+    text-align: center;
+    padding: 0 95px 0 95px;
+}
+
+.form-container h2 {
+    font-family: "Roboto", serif;
+    font-size: 48px;
+    padding-top: 100px;
+
+}
+
+.form-container p {
+    font-size: 18px;
+}
+
+.callback-form {
+    margin-top: 70px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.callback-form input[type="text"],
+input[type="email"] {
+    border: none;
+    padding: 10px 0;
+    margin-bottom: 80px;
+    outline: none;
+    border-bottom: 3px solid black;
+}
+
+
+.callback-form-agree {
+    position: relative;
+    font-size: 18px;
+    text-align: left;
+    display: block;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.callback-form-agree::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    left: 0;
+    background-color: #2a4f37
+}
+
+.callback-form-agree::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 20px;
+    border: solid #ced9b5;
+    border-width: 0 3px 3px 0;
+    background: none;
+    top: 0px;
+    left: 15px;
+    font-size: 0;
+    padding: 1px;
+    cursor: pointer;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.callback-form-agree::after {
+    transform: rotate(45deg);
+}
+
+#callback-form-agree:checked+.callback-form-agree::after {
+    opacity: 1;
+}
+
+.register-btn {
+    background-color: #91aa59;
+    border: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    padding: 20px 60px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.close-form-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background: transparent
+}
+
+
+.close-form-btn::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    top: 15px;
+    left: 2px;
+    background-color: #404040;
+}
+
+.close-form-btn::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    top: 15px;
+    left: 2px;
+    background-color: #404040;
+}
+
+.close-form-btn::after {
+    transform: rotate(45deg);
+}
+
+.close-form-btn::before {
+    transform: rotate(-45deg);
+}
+
+/*--- Форма записи end ---*/
+
+
+/*---Media-----*/
+
+
+@media(max-width:1301px) {
+    .tarifs-list-item {
+        padding: 90px 20px 40px 20px;
+    }
+
+    .tarifs-list-item::before {
+        font-size: 115px;
+        top: 30px;
+        right: 30px;
+    }
+
+    .tarifs .btn::after {
+        background-image: none;
+    }
+
+    .btn-tarifs {
+        width: 100%;
+        text-align: center;
+        padding: 20px 45px;
+    }
+
+    /*---Practice---*/
+    .practice-list {
+        padding: 0 50px;
+    }
+}
+
+
+@media(max-width:1131px) {
+
+    /*---About Pilates---*/
+    .about-pilates {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        min-height: 450px;
+    }
+
+    .about-pilates::before {
+        display: none;
+    }
+
+    .about-pilates-h2 {
+        margin-bottom: 40px;
+    }
+
+    .about-pilates p {
+        padding-right: 50%;
+    }
+
+    .about-pilates picture {
+        top: 100px;
+    }
+
+    /*---Tarifs---*/
+
+
+    .tarifs-list-item h3 {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .tarifs-list-item h3 span {
+        display: block;
+        font-size: 18px;
+    }
+
+    .tarifs-list-item p {
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 16px;
+        line-height: auto;
+    }
+
+    th {
+        width: 20%;
+    }
+
+    /*---Practice---*/
+
+
+    .practice-item h3 {
+        font-size: 18px;
+    }
+
+    .practice-item p {
+        font-size: 16px;
+    }
+
+    .practice-item:nth-child(even) picture {
+        left: -45px;
+    }
+
+    .practice-item:nth-child(2) picture {
+        top: -60px;
+    }
+
+    /*---Slider---*/
+    blockquote img {
+        margin-right: 30px;
+    }
+}
+
+
+@media(max-width: 1023px) {
+
+
+    .site-navigation {
+        display: none;
+    }
+
+    .burger-menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .main-block picture {
+        right: -240px;
+    }
+
+    .wrapper {
+        padding: 0 60px;
+    }
+
+
+    /*---Practice---*/
+
+    .practice-item {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .practice-text-container {
+        padding-bottom: 20px;
+    }
+
+
+    .practice-item:nth-child(even) .practice-text-container {
+        order: 0;
+    }
+
+    .practice-item:nth-child(even) picture {
+        left: -0;
+    }
+
+    .practice-item:nth-child(2) picture {
+        top: 0;
+    }
+
+    /*---slider---*/
+
+    .slide::after {
+        width: 45px;
+        height: 60px;
+        background-image: url("../img/pad/dots-750.png");
+    }
+
+    .slide blockquote {
+        padding-top: calc(100% - 95%);
+        padding-bottom: calc(100% - 95%);
+    }
+
+    blockquote cite {
+        font-size: 18px;
+    }
+
+    .age {
+        font-size: 16px;
+    }
+
+
+    .slider-btn {
+        width: 25px;
+        height: 25px;
+    }
+
+    .slider-btn-prev {
+        top: 50%;
+        left: 5%;
+        transform: translate(-50%, -5%);
+        transform: rotate(-225deg);
+        -webkit-transform: rotate(-225deg);
+    }
+
+    .slider-btn-next {
+        top: 50%;
+        right: 5%;
+        transform: translate(-50%, -5%);
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+}
+
+@media(max-width:801px) {
+
+    .slider-btn {
+        display: none;
+    }
+}
+
+@media(max-width:751px) {
+    body {
+        background-image: url("../img/pad/bg-pad.png");
+        background-position-x: left;
+    }
+
+    .wrapper {
+        padding: 0 30px;
+    }
+
+    .main-block {
+        padding: 120px 0;
+        margin-bottom: 200px;
+    }
+
+    .header-phone {
+        display: none;
+    }
+
+    .burger-menu-btn {
+        margin-left: 30%;
+    }
+
+    .main-block picture {
+        top: -135px;
+        right: -290px;
+    }
+
+    .main-h1 {
+        font-size: 48px;
+        width: 270px;
+    }
+
+
+    .headers-h2 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    /*---About Pilates---*/
+    .about-pilates .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-pilates-h2 {
+        margin-bottom: 30px;
+    }
+
+    .about-pilates p {
+        font-size: 14px;
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .about-pilates picture {
+        position: static;
+        order: 1;
+        margin: 0 auto;
+
+    }
+
+    /*---Tarifs---*/
+
+    .tarifs-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tarifs-list-item {
+        width: calc(100% / 2);
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .tarifs-list-item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    /*---Slider---*/
+    .slider {
+        border-radius: 10px;
+        margin: 30px auto;
+    }
+
+    .slide blockquote {
+        flex-direction: column;
+    }
+
+    .blockquote-text {
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .slide::after {
+        display: none;
+    }
+
+    blockquote img {
+        margin: 0 auto;
+    }
+
+    .slider-control-item {
+        margin-right: 20px;
+    }
+
+    .text {
+
+        position: relative;
+        padding-left: 10px;
+    }
+
+    /*---Footer---*/
+    .footer-nav .wrapper {
+        flex-direction: column;
+    }
+
+    .trademarks {
+        order: 1;
+    }
+
+
+    .contact-list {
+        position: static;
+        background-color: #fff;
+        padding: 0 60px;
+        color: var(--header-color);
+        margin-bottom: 45px;
+    }
+
+    .contacts-h2 {
+        margin-bottom: 30px;
+    }
+
+    .contact-list dd {
+        font-size: 14px;
+        line-height: auto;
+    }
+
+    dt {
+        line-height: 14px;
+        font-size: 18px;
+    }
+
+    .contact-list dd a {
+        color: var(--header-color);
+        outline: none;
+    }
+
+}
+
+
+@media(max-width:445px) {
+    body {
+        background-image: url("../img/phone/bg-phone-320.png");
+        background-position-x: right;
+    }
+
+    .wrapper {
+        padding: 0 15px;
+    }
+
+    .header-phone {
+        display: none;
+    }
+
+    .main-block {
+        padding: 95px 0;
+    }
+
+    .main-block {
+        padding: 95px 0;
+    }
+
+    .main-h1 {
+        font-size: 30px;
+        width: 175px;
+    }
+
+    .main-block p {
+        display: none;
+    }
+
+    .main-block picture {
+        top: -25px;
+        right: -65px;
+    }
+
+    .headers-h2 {
+        font-size: 18px;
+        line-height: auto;
+    }
+
+
+    .btn {
+        padding: 12px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .btn::after {
+        background-image: none;
+    }
+
+    .btn-main {
+        margin-top: 25px;
+    }
+
+    .burger-menu-btn {
+        margin-left: auto;
+        padding-right: 20px;
+    }
+
+    /*---Tarifs---*/
+
+    .tarifs-list-item {
+        width: 100%;
+    }
+
+    /*---Slider---*/
+
+    blockquote cite,
+    blockquote .age {
+        font-size: 16px;
+    }
+
+    .blockquote-text p {
+        font-size: 14px;
+
+    }
+}
+
+.visual-hidden:not(:focus):not(:active),
+input[type="radio"].visual-hidden,
+input[type="checkbox"].visual-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
