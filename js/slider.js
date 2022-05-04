@@ -36,7 +36,7 @@ function handelTouchMove(e){
   let xDiv = x2-x1;
   let yDiv = y2-y1;
   if(Math.abs(xDiv) > Math.abs(yDiv)){
-    if(xDiv > 0 || yDiv >0) {
+    if(xDiv > 0 ) {
       rollLeft();
     }
     else  rollRight();
@@ -68,7 +68,7 @@ function rollRight() {
   activeSlide++;
 
   if (activeSlide > slides.length - 1) {
-    activeSlide = 0;
+    return activeSlide;
   }
   
   setActiveSlide(activeSlide);
@@ -82,7 +82,7 @@ function rollLeft(){
   activeSlide--;
 
   if (activeSlide < 0) {
-    activeSlide = slides.length - 1;
+    return activeSlide;
   }
 
   setActiveSlide(activeSlide);

@@ -450,6 +450,7 @@ th {
 
 .slider-wrapper {
     display: flex;
+    touch-action: auto;
     transition: all ease 1s;
 }
 
