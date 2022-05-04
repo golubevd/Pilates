@@ -14,36 +14,6 @@ const reviewsSlideBtn =document.querySelector('#reviews-link');
 const formContainer = document.querySelector('.callback-form');
 const inputs = formContainer.querySelectorAll('input');
 
-sliderWrapper.addEventListener('touchstart', handelTouchStart, false);
-sliderWrapper.addEventListener('touchmove', handelTouchMove, false);
-
-
-let x1 =null;
-let y1 = null;
-
-function handelTouchStart(e){
-  const firstTouch = e.touches[0];
-  x1 = firstTouch.clientX;
-  y1 = firstTouch.clientY;
-
-}
-
-function handelTouchMove(e){
-  if(!x1 || !y1) {return false;}
-
-  let x2 = e.touches[0].clientX;
-  let y2 = e.touches[0].clientY;
-  let xDiv = x2-x1;
-  let yDiv = y2-y1;
-  if(Math.abs(xDiv) > Math.abs(yDiv)){
-    if(xDiv > 0 ) {
-      rollLeft();
-    }
-    else  rollRight();
-  }
-  x1=null;
-  y1=null;
-}
 
 let activeSlide = 0;
 let width;
@@ -68,7 +38,7 @@ function rollRight() {
   activeSlide++;
 
   if (activeSlide > slides.length - 1) {
-    return activeSlide;
+    activeSlide = 0;
   }
   
   setActiveSlide(activeSlide);
@@ -82,7 +52,7 @@ function rollLeft(){
   activeSlide--;
 
   if (activeSlide < 0) {
-    return activeSlide;
+    activeSlide = slides.length - 1;
   }
 
   setActiveSlide(activeSlide);
