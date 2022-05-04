@@ -61,10 +61,6 @@ function rollLeft(){
 };
 
 
-rollRight();
-rollLeft();
-
-
 function setActiveSlide(n) {
   slides.forEach((slide) => {
     slide.classList.remove("slide--active");
