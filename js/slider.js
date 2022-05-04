@@ -1,3 +1,5 @@
+'use strickt';
+(function(){
 const leftSlideArrow = document.querySelector('#left');
 const rigthSlideArrow = document.querySelector('#right');
 const slides = document.querySelectorAll('.slide');
@@ -11,7 +13,37 @@ const tarifsBtnNav =document.querySelector('#tarifs-link');
 const reviewsSlideBtn =document.querySelector('#reviews-link');
 const formContainer = document.querySelector('.callback-form');
 const inputs = formContainer.querySelectorAll('input');
-console.log(inputs);
+
+sliderWrapper.addEventListener('touchstart', handelTouchStart, false);
+sliderWrapper.addEventListener('touchmove', handelTouchMove, false);
+
+
+let x1 =null;
+let y1 = null;
+
+function handelTouchStart(e){
+  const firstTouch = e.touches[0];
+  x1 = firstTouch.clientX;
+  y1 = firstTouch.clientY;
+
+}
+
+function handelTouchMove(e){
+  if(!x1 || !y1) {return false;}
+
+  let x2 = e.touches[0].clientX;
+  let y2 = e.touches[0].clientY;
+  let xDiv = x2-x1;
+  let yDiv = y2-y1;
+  if(Math.abs(xDiv) > Math.abs(yDiv)){
+    if(xDiv > 0 || yDiv >0) {
+      rollLeft();
+    }
+    else  rollRight();
+  }
+  x1=null;
+  y1=null;
+}
 
 let activeSlide = 0;
 let width;
@@ -29,8 +61,10 @@ function init(){
 window.addEventListener('resize', init);
 init();
 
+rigthSlideArrow.addEventListener('click',rollRight);
+leftSlideArrow.addEventListener('click',rollLeft);
 
-rigthSlideArrow.addEventListener("click", () => {
+function rollRight() {
   activeSlide++;
 
   if (activeSlide > slides.length - 1) {
@@ -40,9 +74,11 @@ rigthSlideArrow.addEventListener("click", () => {
   setActiveSlide(activeSlide);
   setActiveDots(activeSlide);
   rollSlider();
-});
+};
 
-leftSlideArrow.addEventListener("click", () => {
+
+
+function rollLeft(){
   activeSlide--;
 
   if (activeSlide < 0) {
@@ -52,7 +88,12 @@ leftSlideArrow.addEventListener("click", () => {
   setActiveSlide(activeSlide);
   setActiveDots(activeSlide);
   rollSlider();
-});
+};
+
+
+rollRight();
+rollLeft();
+
 
 function setActiveSlide(n) {
   slides.forEach((slide) => {
@@ -128,3 +169,5 @@ slideToBlock(tarifsBtnNav);
 slideToBlock(reviewsSlideBtn);
 
 closeForm();
+
+})();

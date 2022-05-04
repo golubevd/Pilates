@@ -444,6 +444,10 @@ th {
     box-shadow: 9px 29px 32px rgba(0, 0, 0, 0.2);
 }
 
+.slider  img{
+    pointer-events: none;
+}
+
 .slider-wrapper {
     display: flex;
     transition: all ease 1s;
