@@ -58,8 +58,64 @@ main {
 
 .site-navigation {
     list-style: none;
-    display: flex;
-    align-items: center;
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:-40px;
+    padding: 125px;
+    height: 790px;
+    background-color: #91aa59;
+    text-align: center;     
+   
+}
+
+.menu-show{
+    display: block;
+    z-index: 200;    
+}
+
+
+
+.closeMenu {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background: transparent;
+}
+
+
+.closeMenu::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    top: 15px;
+    left: 2px;
+    background-color: #fff;
+}
+
+.closeMenu::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    top: 15px;
+    left: 2px;
+    background-color: #fff;
+}
+
+.closeMenu::after {
+    transform: rotate(45deg);
+}
+
+.closeMenu::before {
+    transform: rotate(-45deg);
 }
 
 .site-navigation-item:not(:last-child) {
@@ -68,8 +124,9 @@ main {
 
 .site-navigation-item a {
     text-decoration: none;
-    font-size: 14px;
-    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 60px;
     color: var(--main-text-color);
     transition: color .2s linear;
 }
@@ -84,14 +141,19 @@ main {
     font-size: 14px;
     font-weight: bold;
     color: inherit;
+    transition: .3s linear;
 }
 
-.burger-menu-btn {
-    display: none;
+.header-phone:hover{
+    opacity: .6;
+}
+
+.burger-menu-btn {   
     font-size: 0;
     border: 0;
     background: transparent;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .burger-menu-btn img {
@@ -626,6 +688,11 @@ dt {
 .contact-list dd a {
     color: var(--main-text-color);
     outline: none;
+    transition: .3s linear;
+}
+
+.contact-list a:hover {
+    color: #404040;   
 }
 
 .map-wrapper {
@@ -684,7 +751,15 @@ footer .wrapper {
     padding-left: 30px;
     line-height: 30px;
     font-size: 0;
+   
+}
 
+.footer-logo, .footer-social-list a{
+    transition: .3s linear;
+}
+
+.footer-logo:hover, .footer-social-list a:hover{
+    opacity: .5;
 }
 
 .footer-social-list a::before {
@@ -710,42 +785,65 @@ footer .wrapper {
 }
 
 
+
+
 /*--- Блок footer end ---*/
 
 
 /*--- Форма записи start ---*/
 
 .write-popup {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -20%);
-    z-index: 99;
-    background-color: #fff;
+    position: fixed;  
+    display: none; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(0,0,0,.3);
+    z-index: 300;
 }
 
 
 .form-wrapper {
-    display: none;
-    box-shadow: 9px 29px 32px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 50px auto; 
+    animation: bounce .6s;
+    max-width: 1165px;
+    width: 100%;
+    padding: 125px;   
+    background: #fff;
+    border-radius: 10px;   
+    animation: bounce .6s;
 }
 
 .form-show {
     display: block;
-    width: 1165px;
+   
 }
 
 
+@keyframes bounce {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+   
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
 .form-container {
-    text-align: center;
-    padding: 0 95px 0 95px;
+    text-align: center;   
 }
 
 .form-container h2 {
     font-family: "Roboto", serif;
     font-size: 48px;
-    padding-top: 100px;
-
 }
 
 .form-container p {
@@ -753,8 +851,7 @@ footer .wrapper {
 }
 
 .callback-form {
-    margin-top: 70px;
-    padding-bottom: 100px;
+    margin-top: 70px;   
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -765,10 +862,16 @@ footer .wrapper {
 .callback-form input[type="text"],
 input[type="email"] {
     border: none;
-    padding: 10px 0;
+    padding: 10px 10px;
     margin-bottom: 80px;
     outline: none;
+    border: 3px solid transparent;
     border-bottom: 3px solid black;
+    
+}
+
+.callback-form input:focus{
+    border-color: #000;
 }
 
 
@@ -788,7 +891,7 @@ input[type="email"] {
     height: 40px;
     top: -5px;
     left: 0;
-    background-color: #2a4f37
+    background-color: #91aa59;
 }
 
 .callback-form-agree::after {
@@ -796,7 +899,7 @@ input[type="email"] {
     content: "";
     width: 10px;
     height: 20px;
-    border: solid #ced9b5;
+    border: solid #fff;
     border-width: 0 3px 3px 0;
     background: none;
     top: 0px;
@@ -899,6 +1002,13 @@ input[type="email"] {
     .practice-list {
         padding: 0 50px;
     }
+
+    .form-wrapper {
+        max-width: 1165px;
+        width: 100%;
+        padding: 80px;   
+     
+    }
 }
 
 
@@ -983,13 +1093,15 @@ input[type="email"] {
 
 
     .site-navigation {
-        display: none;
+        padding: 125px;        
+        top: -60px;
+     }
+
+    .site-navigation-item a {
+        font-size: 36px;
     }
 
-    .burger-menu-btn {
-        display: block;
-        margin-left: auto;
-    }
+    
 
     .main-block picture {
         right: -240px;
@@ -1067,6 +1179,33 @@ input[type="email"] {
         -webkit-transform: rotate(-45deg);
     }
 
+    /*---Modal Form---*/
+
+    .form-wrapper{
+        max-width: 640px;
+    }
+    .callback-form{
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .form-container h2{
+        font-size: 30px;
+        padding-top: 60px;
+    }
+
+    .close-form-btn{
+        top: 5%;
+        right: 5%;
+    }
+
+    .callback-form input[type="text"], input[type="email"]{
+        margin-bottom: 50px;
+    }
+
+    .register-btn{
+        margin-top: 50px;
+    }
 }
 
 @media(max-width:801px) {
@@ -1113,6 +1252,17 @@ input[type="email"] {
     .headers-h2 {
         font-size: 25px;
         line-height: 30px;
+    }
+
+    .site-navigation {
+        padding: 125px 30px;
+        top: -60px;
+        height: 700px;
+        
+    }
+
+    .site-navigation-item a{
+        font-size:18px;
     }
 
     /*---About Pilates---*/
@@ -1226,6 +1376,12 @@ input[type="email"] {
         color: var(--header-color);
         outline: none;
     }
+    .callback-form-agree::after{
+        top: 5px;
+    }
+    .callback-form-agree::before{
+        top: 0;
+    }
 
 }
 
@@ -1291,6 +1447,13 @@ input[type="email"] {
         padding-right: 20px;
     }
 
+
+    .site-navigation {      
+        height:550px;
+        text-align: left;
+        
+    }
+
     /*---Tarifs---*/
 
     .tarifs-list-item {
@@ -1307,6 +1470,38 @@ input[type="email"] {
     .blockquote-text p {
         font-size: 14px;
 
+    }
+
+
+    /*---Modal Form---*/
+
+    .form-wrapper{
+        max-width: 290px;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .form-container h2{
+        font-size: 24px;
+    }
+
+    .form-container p{
+        font-size: 14px;
+    }
+
+    .callback-form-agree{
+        font-size: 14px;
+    }
+
+    .callback-form-agree::after{
+        top: 5px;
+    }
+    .callback-form-agree::before{
+        top: 0;
+    }
+
+    .register-btn{
+        padding: 12px 40px;
     }
 }
 
