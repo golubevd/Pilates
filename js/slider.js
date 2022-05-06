@@ -15,6 +15,7 @@ const formContainer = document.querySelector('.callback-form');
 const inputs = formContainer.querySelectorAll('input');
 const showNavMenuBtn = document.querySelector('.burger-menu-btn');
 const navigationPanel = document.querySelector('.site-navigation');
+const btnClose = document.querySelector('.closeMenu');
 
 
 let activeSlide = 0;
@@ -125,6 +126,7 @@ function closeForm(){
   })
 }
 
+
 function resetInputs(elements){
   elements.forEach((element)=>{
     element.value='';
@@ -136,15 +138,20 @@ function resetInputs(elements){
 
 function showMenu(){
   navigationPanel.classList.toggle('menu-show');
-  const btnClose = document.createElement('button');
-  btnClose.className ='closeMenu';
-  btnClose.innerText='Закрыть меню';
-  navigationPanel.appendChild(btnClose);
-  btnClose.addEventListener('click',()=>{
-    navigationPanel.classList.remove('menu-show');
-    navigationPanel.removeChild(btnClose);
-  })
-}
+ }
+
+btnClose.addEventListener('click',()=>{
+  navigationPanel.classList.remove('menu-show');    
+});
+
+let navigationHeght = navigationPanel.offsetHeight;
+  
+window.addEventListener('scroll', function(){
+  if(window.scrollY > navigationHeght + 500){
+    navigationPanel.classList.remove('menu-show');  
+   }
+})
+
 
 /*Вызов функций */
 

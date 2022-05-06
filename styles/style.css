@@ -123,6 +123,7 @@ main {
 }
 
 .site-navigation-item a {
+    font-family: "Roboto", serif;
     text-decoration: none;
     font-size: 36px;
     font-weight: 800;
@@ -921,15 +922,24 @@ input[type="email"] {
     opacity: 1;
 }
 
-.register-btn {
-    background-color: #91aa59;
-    border: 0;
+#callback-form-agree:focus+.callback-form-agree::before{
+    background-color: #6e9020;
+}
+
+.register-btn {  
     font-size: 18px;
     font-weight: 700;
     color: #fff;
     padding: 20px 60px;
     border-radius: 50px;
     cursor: pointer;
+    background-color: #91aa59;
+    border: 0;
+    transition: .3s ease;
+}
+
+.register-btn:hover, .register-btn:focus{
+    background-color: #6e9020;
 }
 
 .close-form-btn {
