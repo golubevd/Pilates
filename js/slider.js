@@ -1,4 +1,4 @@
-'use strickt';
+'use strict';
 (function(){
 const leftSlideArrow = document.querySelector('#left');
 const rigthSlideArrow = document.querySelector('#right');
